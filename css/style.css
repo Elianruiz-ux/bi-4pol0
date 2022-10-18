@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    color: #000;
+    text-align: center;
+}
+
+
+/* nav */
+
+nav{
+    background-color: #D6EAF8;
+}
+nav ul li a{
+    color: #000!important;
+}
+
+
+/*Contenido del index.php fro*/
+
+.container div{
+    margin: 5% auto;
+}
+
+.tables_aling{
+    display: flex;
+    width: 100%;
+}
+
+
+.table__list{
+    text-align: center;
+    border-radius: 5px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.table__list thead tr{
+    background-color: #D6EAF8;
+    color: #000;
+    font-weight: bold;
+}
+
+.table__list th,
+.table__list td{
+    padding: 12px 15px;
+}
+
+.table__list tbody tr{
+    border-bottom: 1px solid #D6EAF8;
+}
+.table__list tbody tr:nth-of-type(even){
+   background-color: #f3f3f3; 
+}
+
+.table__list tbody tr:last-of-type{
+    border-bottom: 2px solid #D6EAF8;
+}
+
+
+.agregar__punto{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    
+}
+
+
+.basurera{
+    cursor: pointer;
+}
+
+.form__input{
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    object-fit: scale-down;
+    transition: transform .4s;
+    transform: rotate(0deg);
+}
+
+.form__input:hover{
+    transition: transform .4s;
+    transform: rotate(20deg);
+}
+
+
+.form__register{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.form__register h2{
+    margin-bottom: 5%;
+}
+
+.form__container{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 2% 7%;
+    margin: auto;
+}
+
+.form__register form input:first-child, 
+.form__register form .input_btn_form:nth-child(2){
+    display: inline-block;
+    margin: auto;
+}
+
+.form__register form input:first-child, 
+.form__register form .input_btn_form:nth-child(2){
+    padding: 2%;
+    width:  100%;
+}
+
+.form__register form input:first-child{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #D6EAF8;
+}
+
+.form__register form input:first-child:focus{
+    outline: none;
+    
+}
+
+.form__register form .input_btn_form:nth-child(2){
+    background-color: #D6EAF8;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+.form__register form .input_btn_form:nth-child(2):hover{
+    background-color: #b8dcf6;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn_centrar{
+    width: 100%;
+}
+
+
+div input:focus{
+    color: #0000009c;
+}
+
+.group {
+    position: relative;
+    margin: auto;
+  }
+  
+  .group textarea {
+    resize: none;
+  }
+  
+  .group input,
+  .group textarea {
+    background: none;
+    color: #0000007c;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #D6EAF8;
+  }
+  .group input:focus,
+  .group textarea:focus {
+    outline: none;
+ 
+  }
+  .group input:focus ~ label, .group input:valid ~ label,
+  .group textarea:focus ~ label,
+  .group textarea:valid ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: #10181f;
+  }
+  .group input:focus ~ .bar:before,
+  .group textarea:focus ~ .bar:before {
+    width: 100%;
+  }
+ 
+  
+  .group label {
+    color: #0000007c;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+  }
+  
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .bar:before {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: #73c0f7;
+    transition: 300ms ease all;
+    left: 0%;
+    color: #000;
+    
+  }
+
+
+
+.input_btn_form{
+    display: inline-block;
+    margin: auto;
+    padding: 2%;
+    width:  50%;
+    background-color: #D6EAF8;
+    border: none;
+    border-radius: 5px;
+}
+
+.input_btn_form:hover{
+    background-color: #b8dcf6;
+    border: none;   
+}
+
+.input_btn_eliminar{
+    display: inline-block;
+    margin: auto;
+    padding: 2%;
+    width:  50%;
+    background-color: #ff0000;
+    border: none;
+    padding-left: 4%;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.input_btn_eliminar a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.input_btn_eliminar:hover{
+    background-color: #ff0000;
+    opacity: 0.7;
+    border: none;   
+    color: #fff;
+}
+
+
+::-webkit-scrollbar{
+    width: 0;
+}
