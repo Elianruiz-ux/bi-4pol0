@@ -5,7 +5,6 @@ $id = $_GET['id'];
 
 
 $sql = "DELETE FROM puntajes WHERE id='$id' ";
-
 $resultado = $mysqli->query($sql);
 
 ?>

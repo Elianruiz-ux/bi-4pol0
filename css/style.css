@@ -19,23 +19,38 @@ h2{
 /* nav */
 
 nav{
-    background-color: #D6EAF8;
+    background: #D6EAF8!important;
 }
-nav ul li a{
+
+
+nav .nav-link{
+    cursor: pointer!important;
     color: #000!important;
 }
 
+nav .nav-link:hover{
+    cursor: pointer!important;
+    color: rgba(0, 0, 0, 0.457)!important;
+    text-decoration: underline;
+}
 
 /*Contenido del index.php fro*/
 
 .container div{
     margin: 5% auto;
 }
+.centrar__historial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .tables_aling{
     display: flex;
     width: 100%;
+    flex-direction: row;
 }
+
 
 
 .table__list{
@@ -72,6 +87,11 @@ nav ul li a{
 
 .table__list tbody tr:last-of-type{
     border-bottom: 2px solid #D6EAF8;
+}
+
+.negrita{
+    font-weight: bold;
+    background-color: #D6EAF8!important;
 }
 
 
@@ -242,6 +262,7 @@ div input:focus{
 .input_btn_form{
     display: inline-block;
     margin: auto;
+    text-align: center;
     padding: 2%;
     width:  50%;
     background-color: #D6EAF8;
@@ -261,10 +282,10 @@ div input:focus{
     width:  50%;
     background-color: #ff0000;
     border: none;
-    padding-left: 4%;
     border-radius: 5px;
     color: #fff;
     text-decoration: none;
+    text-align: center;
 }
 
 .input_btn_eliminar a{
@@ -283,4 +304,26 @@ div input:focus{
 
 ::-webkit-scrollbar{
     width: 0;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    margin: 3%!important;
+    height: 100%!important;
+    justify-content: center!important;
+    align-items: center!important;
+    text-align: center;
+}
+
+.en_una_linea{
+
+    display: inline-block;
+}
+
+
+
+@media (max-width: 1000px) {
+    .media{
+        display: flex;
+        flex-direction: column;
+    }
 }

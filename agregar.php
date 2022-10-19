@@ -28,8 +28,14 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
                             <input type="hidden" name="nombress" value="<?php echo $row['nombre'] ?>">
                         </div>
                         <div class="group">
-                            <input type="text" name="motivo" value="" required="required" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
-                            <label>Motivo</label>
+                        <select class="form-select" name="motivo" id="motivo" aria-label="Default select example">
+                                <option value="Sin motivo" <?php if ($row['motivo'] == 'Sin motivo'); ?>>Motivo</option>
+                                <option value="Buen comportamiento" <?php if ($row['motivo'] == 'Buen comportamiento'); ?>>Buen comportamiento</option>
+                                <option value="Entrega trabajos a tiempo" <?php if ($row['motivo'] == 'Entrega trabajos a tiempo'); ?>>Entrega trabajos a tiempo</option>
+                                <option value="Amigable" <?php if ($row['motivo'] == 'Amigable'); ?>>Amigable</option>
+                                <option value="Responsabilidad" <?php if ($row['motivo'] == 'Responsabilidad'); ?>>Responsabilidad</option>
+                            </select>
+
                         </div>
                         <div>
                             <select class="form-select" name="puntaje" id="puntaje" aria-label="Default select example">
