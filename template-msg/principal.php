@@ -4,6 +4,7 @@ require '../conexion.php';
 $nombre = $_POST['nombre'];
 
 $sql = "INSERT INTO puntajes (nombre) VALUE ('$nombre')";
+
 $resultado = $mysqli->query($sql);
 
 ?>

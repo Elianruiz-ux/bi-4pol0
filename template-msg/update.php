@@ -3,9 +3,16 @@ require '../conexion.php';
 
 $id = $_POST['id'];
 $puntaje = $_POST['puntaje'];
+$motivo = $_POST['motivo'];
+$nombre = $_POST['nombress'];
 
-$sql = "UPDATE puntajes SET puntaje=puntaje+'$puntaje' WHERE id='$id' ";
+// $sql = "UPDATE puntajes SET puntaje=puntaje+'$puntaje', motivo='$motivo', punto='$puntaje' WHERE id='$id' ";
+$sql1 = "INSERT INTO historial (puntos,motivos,nombre,fechas) VALUE ('$puntaje', '$motivo', '$nombre',sysdate())";
+$resultado = $mysqli->query($sql1);  
+
+$sql = "UPDATE puntajes SET id='$id', puntaje=puntaje+'$puntaje' WHERE id='$id' ";
 $resultado = $mysqli->query($sql);  
+//$sql = "UPDATE historial SET nombre='$nombre', puntos='$puntaje', motivos='$motivo', fechas='sysdate()' WHERE id='$id' ";
 
 ?>
 

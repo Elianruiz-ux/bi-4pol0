@@ -3,9 +3,11 @@ require 'conexion.php';
 
 $id = $_GET['id'];
 
+
 $sql = "SELECT * FROM puntajes WHERE id = '$id'";
 $resultado = $mysqli->query($sql);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
+
 
 ?>
 
@@ -23,9 +25,15 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
                         <div class="group">
                             <input type="text" name="nombre" value="" required="required" pattern="[A-Z-a-z\s]+" disabled /><span class="highlight"></span><span class="bar"></span>
                             <label><?php echo $row['nombre'] ?></label>
+                            <input type="hidden" name="nombress" value="<?php echo $row['nombre'] ?>">
+                        </div>
+                        <div class="group">
+                            <input type="text" name="motivo" value="" required="required" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
+                            <label>Motivo</label>
                         </div>
                         <div>
                             <select class="form-select" name="puntaje" id="puntaje" aria-label="Default select example">
+                                <option value="0" <?php if ($row['puntaje'] == '0'); ?>>0</option>
                                 <option value="1" <?php if ($row['puntaje'] == '1'); ?>>1</option>
                                 <option value="2" <?php if ($row['puntaje'] == '2'); ?>>2</option>
                                 <option value="3" <?php if ($row['puntaje'] == '3'); ?>>3</option>
@@ -57,6 +65,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         </div>
 
     </div>
+
 
 
 
