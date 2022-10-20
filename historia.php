@@ -4,11 +4,16 @@ require 'conexion.php';
 $id = $_GET['id'];
 
 
-$sql = "SELECT * FROM historial WHERE nombre='$id' ORDER BY fechas DESC";
-$historial = $mysqli->query($sql);
-//$sql = "SELECT h.nombre,h.puntos,h.motivos,h.fechas FROM puntajes p LEFT JOIN historial h ON p.nombre=h.nombre WHERE p.nombre='$id'";
+$sql1 = "SELECT * FROM puntajes WHERE id='$id'";
+$resultado = $mysqli->query($sql1);
+$row = $resultado->fetch_array(MYSQLI_ASSOC);
 
-$sql2 = "SELECT SUM(puntos) AS pts FROM historial WHERE nombre='$id'";
+
+//$sql = "SELECT h.nombre,h.puntos,h.motivos,h.fechas FROM puntajes p LEFT JOIN historial h ON p.nombre=h.nombre WHERE p.nombre='$id' ORDER BY h.fechas DESC";
+$sql = "SELECT * FROM historial WHERE documento='$id' ORDER BY fechas DESC";
+$historial = $mysqli->query($sql);
+
+$sql2 = "SELECT SUM(puntos) AS pts FROM historial WHERE documento='$id'";
 $suma = $mysqli->query($sql2);
 
 
@@ -64,9 +69,10 @@ $suma = $mysqli->query($sql2);
                         <tr class="negrita">
                             <td>Total:</td>
                             <td><?php echo $rows['pts']; ?></td>
-                            <td colspan="2"></td>
+                            <td></td>
+                            <td><a class="btn btn__historial" href="redimir_premio.php?id=<?php echo $row['id']; ?>">Redimir premio</a></td>
+                            <?php } ?>
                         </tr>
-                    <?php } ?>
 
                 </tbody>
             </table>

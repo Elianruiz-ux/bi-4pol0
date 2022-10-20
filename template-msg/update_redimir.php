@@ -1,16 +1,20 @@
-<?php
-require '../conexion.php';
+<!-- <?php
+// require '../conexion.php';
 
-$id = $_GET['id'];
+// $id = $_POST['id'];
+// $puntaje = $_POST['puntaje'];
+// $motivo = $_POST['motivo'];
+// $nombre = $_POST['nombress'];
 
+// $sql = "UPDATE puntajes SET puntaje=puntaje+'$puntaje', motivo='$motivo', punto='$puntaje' WHERE id='$id' ";
+// $sql1 = "INSERT INTO historial (puntos,motivos,nombre,fechas) VALUE ('$puntaje', '$motivo', '$nombre',sysdate())";
+// $resultado = $mysqli->query($sql1);  
 
-$sql = "DELETE FROM puntajes WHERE id='$id' ";
-$resultado = $mysqli->query($sql);
+// $sql = "UPDATE puntajes SET id='$id', puntaje=puntaje+'$puntaje' WHERE id='$id' ";
+// $resultado = $mysqli->query($sql);  
+//$sql = "UPDATE historial SET nombre='$nombre', puntos='$puntaje', motivos='$motivo', fechas='sysdate()' WHERE id='$id' ";
 
-// $sql1 = "DELETE FROM historial WHERE documento IN (SELECT id FROM puntajes WHERE documento = '$id')";
-$sql1 = "DELETE FROM historial WHERE documento='$id' ";
-$resultado = $mysqli->query($sql1);  
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,19 +31,17 @@ $resultado = $mysqli->query($sql1);
 <body>
 <div class="container">
         <div class="alert alert-secondary" role="alert">
-            <?php if ($resultado) { ?>
-                <h3>Se elimino correctamente el participante</h3>
-            <?php } else { ?>
-                <h3>No se pudo eliminar correctamente el participante</h3>
-            <?php } ?>
+          
+
             <div class="container">
             <a class="btn" href="../index.php">Volver</a>
         </div>
         </div>
 
-     
+        
 
     </div>
+
 </body>
 
 </html>

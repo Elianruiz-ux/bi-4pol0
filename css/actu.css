@@ -1,15 +1,21 @@
 body{
     margin: 18% auto!important;
     max-width: 50%!important;
+    max-height: 150%!important;
+}
+
+.alert-secondary{
+    background-color: #D6EAF8!important;
+    text-align: center;
 }
 
 .btn{
     margin: 5% auto;
-    border: 1px solid #d2d2d2!important;
-    background-color: #e2e3e5!important;
+    border: 1px solid #73c0f7!important;
+    background-color: #D6EAF8!important;
     color: #0000007c!important;
 }
 
 .btn:hover{
-    background-color: #d2d2d2!important;
+    background-color: #73c0f77c!important;
 }

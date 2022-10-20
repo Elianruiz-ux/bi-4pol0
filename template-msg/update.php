@@ -5,9 +5,10 @@ $id = $_POST['id'];
 $puntaje = $_POST['puntaje'];
 $motivo = $_POST['motivo'];
 $nombre = $_POST['nombress'];
+$docu = $_POST['docus'];
 
 // $sql = "UPDATE puntajes SET puntaje=puntaje+'$puntaje', motivo='$motivo', punto='$puntaje' WHERE id='$id' ";
-$sql1 = "INSERT INTO historial (puntos,motivos,nombre,fechas) VALUE ('$puntaje', '$motivo', '$nombre',sysdate())";
+$sql1 = "INSERT INTO historial (puntos,motivos,nombre,fechas,documento) VALUE ('$puntaje', '$motivo', '$nombre',sysdate(),'$docu')";
 $resultado = $mysqli->query($sql1);  
 
 $sql = "UPDATE puntajes SET id='$id', puntaje=puntaje+'$puntaje' WHERE id='$id' ";

@@ -2,6 +2,10 @@
 require 'conexion.php';
 
 
+$sql = "SELECT * FROM historial";
+$histo = $mysqli->query($sql);
+$row1 = $histo->fetch_array(MYSQLI_ASSOC);
+
 $sql = "SELECT * FROM puntajes ORDER BY puntaje desc";
 $resultado = $mysqli->query($sql);
 
@@ -41,11 +45,11 @@ $premio = $mysqli->query($sql);
                         <?php while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id']; ?></td>
-                                <td><a href="historia.php?id=<?php echo $row['nombre']; ?>" class="agregar__punto"><img src="img/clipboard.svg" alt=""></a></td>
+                                <td><a href="historia.php?id=<?php echo $row['id']; ?>" class="agregar__punto"><img src="img/clipboard.svg" alt=""></a></td>
                                 <td><?php echo $row['nombre']; ?></td>
                                 <td><span>+<?php echo $row['puntaje']; ?> Pts</span></td>
                                 <td><a href="agregar.php?id=<?php echo $row['id']; ?>" class="agregar__punto"><span>+</span><img src="img/estrellamas.svg" alt=""></a></td>
-                                <td><a data-href="template-msg/eliminar.php?id=<?php echo $row['id']; ?><?php echo $row['nombre']; ?>" class="basurera" data-bs-toggle="modal" data-bs-target="#eliminar"><img src="img/basura.svg" alt=""></a></td>
+                                <td><a data-href="template-msg/eliminar.php?id=<?php echo $row['id']; ?>" class="basurera" data-bs-toggle="modal" data-bs-target="#eliminar"><img src="img/basura.svg" alt=""></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>

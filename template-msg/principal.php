@@ -1,9 +1,10 @@
 <?php
 require '../conexion.php';
 
+$docu = $_POST['documento'];
 $nombre = $_POST['nombre'];
 
-$sql = "INSERT INTO puntajes (nombre) VALUE ('$nombre')";
+$sql = "INSERT INTO puntajes (nombre,documento) VALUE ('$nombre',$docu)";
 $resultado = $mysqli->query($sql);
 
 ?>

@@ -320,6 +320,11 @@ div input:focus{
 }
 
 
+.btn__historial:hover{
+    box-shadow: 0 0 4px #73c0f7;
+}
+
+
 
 @media (max-width: 1000px) {
     .media{

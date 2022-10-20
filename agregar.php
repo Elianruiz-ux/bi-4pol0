@@ -23,13 +23,15 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
                     <h1>Agregar Puntos</h1>
                     <form action="./template-msg/update.php" method="POST" autocomplete="off">
                         <div class="group">
-                            <input type="text" name="nombre" value="" required="required" pattern="[A-Z-a-z\s]+" disabled /><span class="highlight"></span><span class="bar"></span>
-                            <label><?php echo $row['nombre'] ?></label>
+                            <input type="text" name="nombre" id="nombre" value="" required="required" pattern="[A-Z-a-z\s]+" disabled /><span class="highlight"></span><span class="bar"></span>
+                            <label>Usuario: <b><?php echo $row['nombre'] ?></b></label>
                             <input type="hidden" name="nombress" value="<?php echo $row['nombre'] ?>">
+                            <input type="hidden" name="docus" value="<?php echo $row['id'] ?>">
                         </div>
-                        <div class="group">
+                        <div>
+                            <label for="#motivo">Motivo</label>
                         <select class="form-select" name="motivo" id="motivo" aria-label="Default select example">
-                                <option value="Sin motivo" <?php if ($row['motivo'] == 'Sin motivo'); ?>>Motivo</option>
+                                <option value="Sin motivo" <?php if ($row['motivo'] == 'Sin motivo'); ?>>Sin motivo</option>
                                 <option value="Buen comportamiento" <?php if ($row['motivo'] == 'Buen comportamiento'); ?>>Buen comportamiento</option>
                                 <option value="Entrega trabajos a tiempo" <?php if ($row['motivo'] == 'Entrega trabajos a tiempo'); ?>>Entrega trabajos a tiempo</option>
                                 <option value="Amigable" <?php if ($row['motivo'] == 'Amigable'); ?>>Amigable</option>
@@ -38,6 +40,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
                         </div>
                         <div>
+                        <label for="#puntaje">Puntos</label>
                             <select class="form-select" name="puntaje" id="puntaje" aria-label="Default select example">
                                 <option value="0" <?php if ($row['puntaje'] == '0'); ?>>0</option>
                                 <option value="1" <?php if ($row['puntaje'] == '1'); ?>>1</option>

@@ -15,7 +15,7 @@
 
 
     <!-- Se inicia navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid ">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,12 @@
                                 <div>
                                     <div>
                                         <form action="template-msg/principal.php" method="POST" autocomplete="off">
-                                            <div class="group">
+                                        <div class="group">
+                                                <input type="text" name="documento" required="required" pattern="[0-9]+" /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Documento</label>
+                                                <input type="hidden" name="puntaje" />
+                                            </div>    
+                                        <div class="group">
                                                 <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Nombre</label>
                                                 <input type="hidden" name="puntaje" />
