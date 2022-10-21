@@ -25,16 +25,18 @@ require '../conexion.php';
     $docu = $_POST['documento'];
     $nombre = $_POST['nombre'];
     
-    $validar = "SELECT * FROM puntajes WHERE documento = $docu";
+    $validar = "SELECT * FROM puntajes WHERE documento = '$docu'";
     $validando = $mysqli->query($validar);
 
     if($validando->num_rows > 0){
-        printf("<h3 class='warning' >Documento ya existente</h3>");
+        printf("<h3 class='warning'> Documento ya existente </h3>");
 
     }else{
-        $sql = "INSERT INTO puntajes (nombre,documento) VALUE ('$nombre','$docu')";
+
+        $sql = "INSERT INTO puntajes (nombre,documento) VALUE ('$nombre', '$docu')";
         $resultado = $mysqli->query($sql);
-        if($resultado > 0){
+
+        if($resultado){
             printf("<h3> Se registro correctamente el participante</h3>");
         }else{
             printf("<h3 class='warning'> No se pudo registrar el participante</h3>");
