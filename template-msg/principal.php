@@ -1,11 +1,6 @@
 <?php
 require '../conexion.php';
 
-$docu = $_POST['documento'];
-$nombre = $_POST['nombre'];
-
-$sql = "INSERT INTO puntajes (nombre,documento) VALUE ('$nombre',$docu)";
-$resultado = $mysqli->query($sql);
 
 ?>
 
@@ -24,11 +19,29 @@ $resultado = $mysqli->query($sql);
 <body>
 <div class="container">
         <div class="alert alert-secondary" role="alert">
-            <?php if ($resultado) { ?>
-           <h3>     Se registro correctamente el participante </h3>
-            <?php } else { ?>
-            <h3>    No se pudo registrar el participante </h3>
-            <?php } ?>
+
+    <?php 
+    
+    $docu = $_POST['documento'];
+    $nombre = $_POST['nombre'];
+    
+    $validar = "SELECT * FROM puntajes WHERE documento = $docu";
+    $validando = $mysqli->query($validar);
+
+    if($validando->num_rows > 0){
+        printf("<h3 class='warning' >Documento ya existente</h3>");
+
+    }else{
+        $sql = "INSERT INTO puntajes (nombre,documento) VALUE ('$nombre','$docu')";
+        $resultado = $mysqli->query($sql);
+        if($resultado > 0){
+            printf("<h3> Se registro correctamente el participante</h3>");
+        }else{
+            printf("<h3 class='warning'> No se pudo registrar el participante</h3>");
+        }
+    }
+
+    ?>
             <div class="container">
             <a class="btn" href="../index.php">Volver</a>
         </div>

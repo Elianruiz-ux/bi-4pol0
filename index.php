@@ -28,13 +28,14 @@ $premio = $mysqli->query($sql);
     
                     <thead>
                         <tr>
-                            <th colspan="6">
+                            <th colspan="7">
                                 <h2>Tabla de puntaciones</h2>
                             </th>
                         </tr>
                         <tr>
                             <th>Id</th>
                             <th>Historial</th>
+                            <th>Documento</th>
                             <th>Nombre</th>
                             <th>Puntaje</th>
                             <th></th>
@@ -46,6 +47,7 @@ $premio = $mysqli->query($sql);
                             <tr>
                                 <td><?php echo $row['id']; ?></td>
                                 <td><a href="historia.php?id=<?php echo $row['id']; ?>" class="agregar__punto"><img src="img/clipboard.svg" alt=""></a></td>
+                                <td><?php echo $row['documento']; ?></td>
                                 <td><?php echo $row['nombre']; ?></td>
                                 <td><span>+<?php echo $row['puntaje']; ?> Pts</span></td>
                                 <td><a href="agregar.php?id=<?php echo $row['id']; ?>" class="agregar__punto"><span>+</span><img src="img/estrellamas.svg" alt=""></a></td>

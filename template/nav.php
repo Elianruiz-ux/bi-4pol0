@@ -57,18 +57,18 @@
                                 <!-- Formulario de registrar participante -->
                                 <div>
                                     <div>
-                                        <form action="template-msg/principal.php" method="POST" autocomplete="off">
-                                        <div class="group">
-                                                <input type="text" name="documento" required="required" pattern="[0-9]+" /><span class="highlight"></span><span class="bar"></span>
+                                        <form name="form" action="template-msg/principal.php" method="POST" autocomplete="off" >
+                                            <div class="group">
+                                                <input type="text" name="documento" required="required" pattern="[0-9]+" minlength="6" maxlength="12" /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Documento</label>
                                                 <input type="hidden" name="puntaje" />
-                                            </div>    
-                                        <div class="group">
+                                            </div>
+                                            <div class="group">
                                                 <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Nombre</label>
                                                 <input type="hidden" name="puntaje" />
                                             </div>
-                                            <input type="submit" value="Registrar" class="input_btn_form">
+                                            <input type="submit" value="Registrar" class="input_btn_form" reset>
                                         </form>
                                     </div>
                                 </div>
@@ -104,8 +104,7 @@
                                             <input type="hidden" name="puntaje" />
                                         </div>
                                         <div>
-
-                                            <input type="submit" value="Registrar" class="input_btn_form">
+                                            <input type="submit" value="Registrar" class="input_btn_form" reset>
                                         </div>
                                     </form>
                                 </div>

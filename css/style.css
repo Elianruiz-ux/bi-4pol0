@@ -142,6 +142,10 @@ nav .nav-link:hover{
     margin: auto;
 }
 
+.form__container label{
+    font-weight: 500;
+}
+
 .form__register form input:first-child, 
 .form__register form .input_btn_form:nth-child(2){
     display: inline-block;

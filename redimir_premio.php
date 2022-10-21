@@ -2,8 +2,10 @@
 require 'conexion.php';
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM puntajes WHERE id = '$id'";
-$resultado = $mysqli->query($sql);
+
+
+$sql1 = "SELECT * FROM puntajes WHERE id='$id'";
+$resultado = $mysqli->query($sql1);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
 
@@ -35,8 +37,8 @@ $premio = $mysqli->query($sql);
                 <div>
                     <select class="form-select" name="motivo" id="motivo" aria-label="Default select example">
                         
-                        <?php while ($row = $premio->fetch_array(MYSQLI_ASSOC)) { ?>
-                                <option value="Sin motivo" <?php if ($row['puntaje'] == $row['nombre']); ?>><?php echo $row['puntaje'] ?> Pts vale <?php echo $row['nombre'] ?></option>
+                        <?php while ($rows = $premio->fetch_array(MYSQLI_ASSOC)) { ?>
+                                <option value="Sin motivo" <?php if ($rows['puntaje'] == $rows['nombre']); ?>><?php echo $rows['puntaje'] ?> Pts vale <?php echo $rows['nombre'] ?></option>
                                 <?php } ?>
                             </select>
                 </div>
@@ -55,6 +57,7 @@ $premio = $mysqli->query($sql);
                                 <input type="image" value="5" name="puntaje" class="form__input" src="img/cinco.png" alt="estrella 5" />
                             </div> -->
             <div>
+                
                 <a class="btn btn_centrar" href="historia.php?id=<?php echo $row['id']; ?>">Volver</a>
             </div>
         </div>

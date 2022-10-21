@@ -1,7 +1,21 @@
 body{
-    margin: 18% auto!important;
-    max-width: 50%!important;
-    max-height: 150%!important;
+    margin: 5% auto!important;
+    max-width: 90%!important;
+    
+}
+
+body h3{
+    color: #000!important;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+body h3:nth-child(2){
+    color: red!important;
+}
+
+.warning{
+    color: red!important;
 }
 
 .alert-secondary{
@@ -10,12 +24,13 @@ body{
 }
 
 .btn{
-    margin: 5% auto;
-    border: 1px solid #73c0f7!important;
+    margin: 3% auto;
+    padding: 1% 15% !important;
     background-color: #D6EAF8!important;
     color: #0000007c!important;
+    font-size:1.6em!important;
 }
 
 .btn:hover{
-    background-color: #73c0f77c!important;
+    box-shadow: 0 0 10px #73c0f77c!important;
 }
