@@ -35,12 +35,14 @@ $premio = $mysqli->query($sql);
                     <label>Puntos totales: <b><?php echo $row['puntaje'] ?></b></label>
                 </div>
                 <div>
-                    <select class="form-select" name="motivo" id="motivo" aria-label="Default select example">
+                    <select class="form-select" name="premio" id="premio" aria-label="Default select example">
                         
                         <?php while ($rows = $premio->fetch_array(MYSQLI_ASSOC)) { ?>
-                                <option value="Sin motivo" <?php if ($rows['puntaje'] == $rows['nombre']); ?>><?php echo $rows['puntaje'] ?> Pts vale <?php echo $rows['nombre'] ?></option>
+                                <option value="<?php echo $rows['puntaje']; ?>"><?php echo $rows['puntaje'] ?> Puntos | <?php echo $rows['nombre'] ?></option>
                                 <?php } ?>
-                            </select>
+                                <input type="hidden" id="id" name="id" value="<?php echo $row['nombre'] ?>">
+                    </select>
+                    <input type="hidden" id="puntos1" name="puntos1" value="<?php echo $row['puntaje'] ?>">
                 </div>
                 <div>
                     <input type="hidden" id="id" name="id" value="<?php echo $row['id'] ?>">

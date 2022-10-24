@@ -329,6 +329,22 @@ div input:focus{
 }
 
 
+.form-select{
+    border: none!important;
+    border-bottom: 2px solid #D6EAF8!important;
+}
+
+.form-select:focus{
+    border-bottom-left-radius:0.25rem!important;
+    border-bottom-right-radius:0.25rem!important;
+}
+
+form select{
+    border-bottom-left-radius:0!important;
+    border-bottom-right-radius:0!important;
+}
+
+
 
 @media (max-width: 1000px) {
     .media{
