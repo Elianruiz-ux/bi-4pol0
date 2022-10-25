@@ -35,14 +35,14 @@ $suma = $mysqli->query($sql2);
                 <thead>
                     <tr>
                         <th colspan="1">
-                            <a href="index.php"><img src="img/arrow-left.svg" alt=""></a>
+                            <a href="index.php"><img src="img/arrow-left.svg" alt="atras"></a>
 
                         </th>
                         <th></th>
                         <th>
                             <h2>Historial</h2>
                         </th>
-                        <th></th>
+                        <th><a class="btn btn__historial" href="redimir_premio.php?id=<?php echo $row['id']; ?>"><img src="img/trophy.svg" alt="redimir" title="Redimir puntos"></a></th>
 
                     </tr>
                     <tr>
@@ -69,8 +69,7 @@ $suma = $mysqli->query($sql2);
                         <tr class="negrita">
                             <td>Total:</td>
                             <td><?php echo $rows['pts']; ?></td>
-                            <td></td>
-                            <td><a class="btn btn__historial" href="redimir_premio.php?id=<?php echo $row['id']; ?>">Redimir premio</a></td>
+                            <td colspan="2"></td>
                             <?php } ?>
                         </tr>
 
@@ -78,6 +77,6 @@ $suma = $mysqli->query($sql2);
             </table>
         </div>
     </div>
-
-
+    
+    
     <?php include("template/footer.php"); ?>

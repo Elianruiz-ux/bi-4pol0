@@ -1,7 +1,6 @@
 <?php
 require '../conexion.php';
 
-
 ?>
 
 <!DOCTYPE html>

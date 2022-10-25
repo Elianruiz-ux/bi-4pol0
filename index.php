@@ -13,6 +13,25 @@ $sql = "SELECT * FROM premios ORDER BY puntaje desc";
 $premio = $mysqli->query($sql);
 
 
+// $db = new Database();
+// $con = $db->conectar();
+
+
+// $sql = $con->prepare("SELECT * FROM historial");
+// $sql->execute();
+// $response = $sql->fetchAll(PDO::FETCH_ASSOC);
+// $histo = $con->query($sql);
+
+
+//  $sql = $con->prepare("SELECT * FROM puntajes ORDER BY puntaje desc");
+// $sql->execute();
+// $response = $sql->fetchAll(PDO::FETCH_ASSOC);
+// $resultado = $mysqli->query($sql);
+
+// $sql = "SELECT * FROM premios ORDER BY puntaje desc";
+// $premio = $mysqli->query($sql);
+
+
 ?>
 
 <?php include("template/nav.php"); ?>
