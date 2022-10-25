@@ -16,7 +16,6 @@ $historial = $mysqli->query($sql);
 $sql2 = "SELECT SUM(puntos) AS pts FROM historial WHERE documento='$id'";
 $suma = $mysqli->query($sql2);
 
-
 ?>
 
 
@@ -25,11 +24,11 @@ $suma = $mysqli->query($sql2);
 
 
 
-<div class="container">
+<div class="tables_aling media">
 
 
     <div>
-        <div class="table centrar__historial">
+        <div class="table">
             <table class="table__list">
 
                 <thead>
@@ -77,6 +76,42 @@ $suma = $mysqli->query($sql2);
             </table>
         </div>
     </div>
+
+
+    <?php 
+    
+$sql3 = "SELECT * FROM redimidos WHERE documento='$id'";
+$historial_premio = $mysqli->query($sql3);
+
+    ?>
+
+    <div>
+        <div class="table">
+            <table class="table__list">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h2>Premios</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Puntos redimidos</th>
+                        <th>Premio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php while ($rows = $historial_premio->fetch_array(MYSQLI_ASSOC)) { ?>
+                        <tr>
+                           <td><?php echo $rows['puntos_redimir']; ?></td>
+                           <td><?php echo $rows['premio_redimir']; ?></td>
+                        </tr>
+                    <?php }?>    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
     
     
     <?php include("template/footer.php"); ?>

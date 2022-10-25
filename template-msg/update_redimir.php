@@ -23,14 +23,17 @@ require '../conexion.php';
 
             $id = $_POST['id'];
             $premio = $_POST['premio'];
-
+            
             if ($_POST['puntos1'] < $premio) {
                 printf("<h3 class='warning'> No se pudo redimir el premio</h3>");
-            } else {
+            } else { 
+
+                $sql ="INSERT INTO redimidos (documento,puntos_redimir) VALUE ('$id', '$premio')";
+                $resultado = $mysqli->query($sql);
 
                 $sql = "UPDATE puntajes SET id='$id', puntaje=puntaje-'$premio' WHERE id='$id' ";
                 $resultado = $mysqli->query($sql);
-
+                
                 if ($resultado) {
                     printf("<h3> Se redimio correctamente</h3>");
                 } else {

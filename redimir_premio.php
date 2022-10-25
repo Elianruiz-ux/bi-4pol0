@@ -9,8 +9,9 @@ $resultado = $mysqli->query($sql1);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
 
-$sql = "SELECT * FROM premios ORDER BY puntaje desc";
+$sql = "SELECT * FROM premios";
 $premio = $mysqli->query($sql);
+$rows = $resultado->fetch_array(MYSQLI_ASSOC);
 
 ?>
 
@@ -38,8 +39,9 @@ $premio = $mysqli->query($sql);
                     <select class="form-select" name="premio" id="premio" aria-label="Default select example">
                         
                         <?php while ($rows = $premio->fetch_array(MYSQLI_ASSOC)) { ?>
-                                <option value="<?php echo $rows['puntaje']; ?>"><?php echo $rows['puntaje'] ?> Puntos | <?php echo $rows['nombre'] ?></option>
-                                <?php } ?>
+                                <option value="<?php echo $rows['puntaje'];?>"><?php echo $rows['puntaje'] ?> Puntos | Premio: <?php echo $rows['nombre'] ?></option>
+                        <?php } ?>
+                                
                                 <input type="hidden" id="id" name="id" value="<?php echo $row['nombre'] ?>">
                     </select>
                     <input type="hidden" id="puntos1" name="puntos1" value="<?php echo $row['puntaje'] ?>">

@@ -10,6 +10,10 @@ $resultado = $mysqli->query($sql);
 // $sql1 = "DELETE FROM historial WHERE documento IN (SELECT id FROM puntajes WHERE documento = '$id')";
 $sql1 = "DELETE FROM historial WHERE documento='$id' ";
 $resultado = $mysqli->query($sql1);  
+
+$sqle = "DELETE FROM redimidos WHERE documento='$id' ";
+$resultado = $mysqli->query($sqle); 
+
 ?>
 
 <!DOCTYPE html>
