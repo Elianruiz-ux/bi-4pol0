@@ -26,11 +26,11 @@ require '../conexion.php';
             
             $punto = $_POST['puntos1'];
             
-            if ($punto < (substr($premio,0, 1))) {
+            if ($punto < explode(" ",$premio)[0]) {
                 printf("<h3 class='warning'> No se pudo redimir el premio</h3>");
             } else { 
                 
-                $sql ="INSERT INTO redimidos (documento,premio_redimir) VALUE ('$id', '$premio')";
+                $sql ="INSERT INTO redimidos (documento,fecha_redimir,premio_redimir) VALUE ('$id',sysdate(),'$premio')";
                 $resultado = $mysqli->query($sql);
 
                 $sql = "UPDATE puntajes SET id='$id', puntaje=puntaje-'$premio' WHERE id='$id' ";
