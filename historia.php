@@ -95,14 +95,12 @@ $historial_premio = $mysqli->query($sql3);
                         </th>
                     </tr>
                     <tr>
-                        <th>Puntos redimidos</th>
-                        <th>Premio</th>
+                        <th>Puntos | Premio</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php while ($rows = $historial_premio->fetch_array(MYSQLI_ASSOC)) { ?>
                         <tr>
-                           <td><?php echo $rows['puntos_redimir']; ?></td>
                            <td><?php echo $rows['premio_redimir']; ?></td>
                         </tr>
                     <?php }?>    

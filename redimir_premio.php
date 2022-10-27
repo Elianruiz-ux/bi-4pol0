@@ -26,7 +26,7 @@ $rows = $resultado->fetch_array(MYSQLI_ASSOC);
         <div class="form__container">
             <!-- formulario -->
             <h1>Redimir premio</h1>
-            <form action="template-msg/update_redimir.php" method="POST" autocomplete="off">
+            <form action="template-msg/update_redimir.php" method="POST" name="document" autocomplete="off">
                 <div class="group">
                     <input type="text" name="nombre" value="" disabled /><span class="highlight"></span><span class="bar"></span>
                     <label>Usuario: <b><?php echo $row['nombre'] ?></b></label>
@@ -39,11 +39,13 @@ $rows = $resultado->fetch_array(MYSQLI_ASSOC);
                     <select class="form-select" name="premio" id="premio" aria-label="Default select example">
                         
                         <?php while ($rows = $premio->fetch_array(MYSQLI_ASSOC)) { ?>
-                                <option value="<?php echo $rows['puntaje'];?>"><?php echo $rows['puntaje'] ?> Puntos | Premio: <?php echo $rows['nombre'] ?></option>
+                            <?php echo "<option value='".$rows['puntaje']." Puntos | Premio: ".$rows['nombre']."'>".$rows['puntaje']." Puntos | Premio: ".$rows['nombre']."</option>"; ?>
+                            
                         <?php } ?>
                                 
-                                <input type="hidden" id="id" name="id" value="<?php echo $row['nombre'] ?>">
+                        <input type="hidden" id="id" name="id" value="<?php echo $row['nombre'] ?>">
                     </select>
+                    
                     <input type="hidden" id="puntos1" name="puntos1" value="<?php echo $row['puntaje'] ?>">
                 </div>
                 <div>
