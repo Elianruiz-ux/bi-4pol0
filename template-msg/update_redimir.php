@@ -46,7 +46,12 @@ require '../conexion.php';
 
             
             <div class="container">
-                <a class="btn" href="../index.php">Volver</a>
+                <?php
+                $sql = "SELECT * FROM puntajes WHERE id='$id'";
+                $resultado = $mysqli->query($sql);
+                $row1 = $resultado->fetch_array(MYSQLI_ASSOC);
+                ?>
+                <a class="btn" href="../historia.php?id=<?php echo $row1['id']; ?>">Volver</a>
             </div>
         </div>
 
