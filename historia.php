@@ -66,7 +66,7 @@ $suma = $mysqli->query($sql2);
 
                     <?php while ($rows = $suma->fetch_array(MYSQLI_ASSOC)) { ?>
                         <tr class="negrita">
-                            <td>Total:</td>
+                            <td>Total ganados:</td>
                             <td><?php echo $rows['pts']; ?></td>
                             <td colspan="2"></td>
                             <?php } ?>

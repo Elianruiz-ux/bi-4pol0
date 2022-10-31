@@ -30,8 +30,8 @@ nav .nav-link{
 
 nav .nav-link:hover{
     cursor: pointer!important;
-    color: rgba(0, 0, 0, 0.457)!important;
-    text-decoration: underline;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #73c0f77c!important;
 }
 
 /*Contenido del index.php fro*/
