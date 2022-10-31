@@ -68,7 +68,7 @@
                                                 <input type="hidden" name="puntaje" />
                                             </div>
                                             <div class="group">
-                                                <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
+                                                <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s]+" maxlength="40"/><span class="highlight"></span><span class="bar"></span>
                                                 <label>Nombre</label>
                                                 <input type="hidden" name="puntaje" />
                                             </div>
@@ -97,7 +97,7 @@
                                 <div>
                                     <form action="template-msg/premio.php" method="POST" autocomplete="off">
                                         <div class="group">
-                                            <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s ]+" /><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="nombre" required="required" pattern="[A-Z-a-z\s ]+" maxlength="40" /><span class="highlight"></span><span class="bar"></span>
                                             <label>Premio</label>
                                             <input type="hidden" name="puntaje" />
                                         </div>

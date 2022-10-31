@@ -48,7 +48,7 @@ $premio = $mysqli->query($sql);
                     <thead>
                         <tr>
                             <th colspan="7">
-                                <h2>Tabla de puntaciones</h2>
+                                <h2>Tabla de puntuaciones</h2>
                             </th>
                         </tr>
                         <tr>

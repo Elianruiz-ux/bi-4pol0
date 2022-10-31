@@ -18,7 +18,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
                     <h1>Modificar premio</h1>
                     <form action="template-msg/update_premio.php" method="POST" autocomplete="off">
                         <div class="group">
-                            <input type="text" name="nombre" value="<?php echo $row['nombre'] ?>" pattern="[A-Z-a-z\s]+" /><span class="highlight"></span><span class="bar"></span>
+                            <input type="text" name="nombre" value="<?php echo $row['nombre'] ?>" pattern="[A-Z-a-z\s]+" maxlength="40"/><span class="highlight"></span><span class="bar"></span>
                             <label>Premio</label>
                         </div>
                         <div class="group">
