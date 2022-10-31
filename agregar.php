@@ -41,8 +41,8 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
                         </div>
                         <div>
                         <label for="#puntaje">Puntos</label>
-                            <select class="form-select" name="puntaje" id="puntaje" aria-label="Default select example">
-                                <option value="0" <?php if ($row['puntaje'] == '0'); ?>>0</option>
+                            <select class="form-select" name="puntaje" id="puntaje" aria-label="Default select example" required>
+                                <option value="" <?php if ($row['puntaje'] == ''); ?>></option>
                                 <option value="1" <?php if ($row['puntaje'] == '1'); ?>>1</option>
                                 <option value="2" <?php if ($row['puntaje'] == '2'); ?>>2</option>
                                 <option value="3" <?php if ($row['puntaje'] == '3'); ?>>3</option>

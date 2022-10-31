@@ -105,7 +105,20 @@ $historial_premio = $mysqli->query($sql3);
                            <td><?php echo $rows['fecha_redimir']; ?></td>
                            <td><?php echo $rows['premio_redimir']; ?></td>
                         </tr>
-                    <?php }?>    
+                    <?php }?>   
+                    
+
+<?php 
+$sql2 = "SELECT SUM(premio_redimir) AS pts FROM redimidos WHERE documento='$id'";
+$suma = $mysqli->query($sql2);
+?>
+                   <?php while ($rows = $suma->fetch_array(MYSQLI_ASSOC)) { ?>
+                        <tr class="negrita">
+                            <td>Total redimidos:</td>
+                            <td><?php echo $rows['pts']; ?></td>
+                            <?php }?>   
+                           
+                        </tr>
                 </tbody>
             </table>
         </div>
